@@ -3,56 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="PDF ကြည့်စရာ — ဖုန်းပေါ်မှာ ဒေါင်လိုက် (portrait) အနေအထားနဲ့ PDF ဖတ်နိုင်တဲ့ ရိုးရှင်းတဲ့ တေးရှားတစ်ခုပါ။">
-  <meta name="theme-color" content="#0f172a">
-  <title>PDF ကြည့်စရာ</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+  <meta name="description" content="ဂျင်းအင်ပါယာ — ဂျင်းလူမျိုးတို့၏ အတိတ်စာအုပ်။ စာမူ၊ အနှစ်ချုပ်နှင့် ပဟေဠိ။">
+  <meta name="theme-color" content="#140a04">
+  <title>ဂျင်းအင်ပါယာ · ဂျင်းလူမျိုးတို့၏ အတိတ်စာအုပ်</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ff7a1a'/><text x='50' y='62' font-size='42' text-anchor='middle' fill='%23140a04' font-family='serif'>ဃ</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Archivo:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <div class="app">
-    <header class="topbar">
-      <div class="brand">
-        <span class="brand-mark">📘</span>
-        <div class="brand-text">
-          <h1>PDF ကြည့်စရာ</h1>
-          <p>မင်္ဂလာပါ · ဖုန်းကို ဒေါင်လိုက် ကိုင်ပြီး ဖတ်ပါ</p>
-        </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="hero">
+    <span class="hero-kicker">လောက၏ သမိုင်း · အတွဲ ၁.၂</span>
+    <div class="hero-inner">
+      <div class="seal" aria-hidden="true">
+        <span class="seal-core">ဃ</span>
       </div>
-      <button id="soundToggle" class="sound-btn" type="button" aria-pressed="true">
-        <span class="sound-icon">🔊</span>
-        <span class="sound-label">အသံ ဖွင့်</span>
-      </button>
-    </header>
+      <h1 class="hero-title">ဂျင်းအင်ပါယာ</h1>
+      <p class="hero-sub">ဂျင်းလူမျိုးတို့၏ အတိတ်စာအုပ် — ဟင်းခတ် အမွှေးအကြိုင် တစ်ခုက နိုင်ငံတစ်နိုင်ငံလုံးကို ဘယ်လို ယမ်းတင်သွားသလဲ</p>
+    </div>
+  </header>
 
-    <main class="content">
-      <p class="hint">
-        အောက်က စာရွက်တစ်ခုခုကို နှိပ်လိုက်ရင် PDF ပွင့်ပါမယ်။
-        ဖတ်ပြီးတာနဲ့ <b>နောက်သို့</b> ဆိုတဲ့ တည်နေရာကို နှိပ်ပြီး ပြန်ထွက်နိုင်ပါတယ်။
-      </p>
-
-      <h2 class="sec-title">စာရွက်များ</h2>
-      <ul class="doclist" id="docList"></ul>
-
-      <p class="note">
-        🔊 အသံက ကျပန်း အသံလေးတွေ ဖြစ်ပါတယ်။
-        မကြိုက်ရင် အပေါ်က <b>အသံ ပိတ်</b> ကို နှိပ်ပါ။
-      </p>
-    </main>
-
-    <footer class="foot">
-      မြန်မာစာ · PDF ကြည့်စရာ · ၂၀၂၆
-    </footer>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>ဂျင်း၊ ဂျင်း၊ ဂျင်း</span><span>✦</span><span>ဂျင်းမရှိလျှင် ဟင်းမဖြစ်နိုင်</span><span>✦</span><span>ဂျင်းကောင်းပါစေ</span><span>✦</span><span>ဂျင်းများပါစေ</span><span>✦</span><span>ဘာလုပ်လုပ် ဂျင်းပါရမည်</span><span>✦</span><span>ဂျင်းမရှိသောဟင်း မဖြစ်ပါစေနှင့်</span><span>✦</span><span>ဂျင်းလျှော့ပါ</span><span>✦</span>
+    </div>
   </div>
 
-  <div id="viewer" class="viewer hidden" role="dialog" aria-modal="true">
-    <div class="viewer-bar">
-      <button id="closeViewer" class="close-btn" type="button">← နောက်သို့</button>
-      <h2 id="viewerTitle" class="viewer-title"></h2>
+  <nav class="tabs" aria-label="အပိုင်းရွေးရန်">
+    <button class="tab is-on" data-tab="book" type="button">
+      <span class="tab-num">၁</span>
+      <span class="tab-title">စာမူ</span>
+      <span class="tab-cap">မူရင်းစာအုပ်</span>
+    </button>
+    <button class="tab" data-tab="sum" type="button">
+      <span class="tab-num">၂</span>
+      <span class="tab-title">အနှစ်ချုပ်</span>
+      <span class="tab-cap">ခေတ် ၅ ခေတ်</span>
+    </button>
+    <button class="tab" data-tab="quiz" type="button">
+      <span class="tab-num">၃</span>
+      <span class="tab-title">ပဟေဠိ</span>
+      <span class="tab-cap">သင်မှတ်မိပါသလား</span>
+    </button>
+  </nav>
+
+  <main class="content">
+
+    <section class="pane is-on" data-pane="book">
+      <p class="lede">
+        အောက်ပါ တံဆိပ်ခတ် စာမူကို ဖွင့်ပါ။ ထိုစာမူသည်
+        ဂျင်းလူမျိုးတို့ ထွန်းကားခဲ့သည့် ခေတ် ၅ ခေတ်၏
+        တစ်ခုတည်းသော သက်သေဖြစ်သည်။
+      </p>
+      <button id="openBook" class="open-book" type="button">
+        <span class="open-book-line">ဂျင်းစာအုပ်ကို</span>
+        <span class="open-book-flick">★ ဖွင့်မည် ★</span>
+      </button>
+      <p class="hint-line">ဖုန်းကို ဒေါင်လိုက် (ပုံတူ) အနေအထားနဲ့ ဖတ်ပါ · အသံဖြင့် လိုက်ပါဖတ်နိုင်ပါသည်</p>
+    </section>
+
+    <section class="pane" data-pane="sum">
+      <h2 class="pane-head">ခေတ် ၅ ခေတ် ၏ အနှစ်ချုပ်</h2>
+      <div class="tablet-list" id="eraList"></div>
+    </section>
+
+    <section class="pane" data-pane="quiz">
+      <h2 class="pane-head">ပဟေဠိ · ဂျင်းသမိုင်း စာမေးပွဲ</h2>
+      <div id="quiz"></div>
+    </section>
+
+  </main>
+
+  <div class="mute-strip">
+    <button id="soundToggle" class="mute-btn" type="button" aria-pressed="true">
+      <span class="bell" aria-hidden="true">◉</span>
+      <span class="mute-label">ခေါင်းလောင်း မြည်နေသည်</span>
+    </button>
+  </div>
+
+  <footer class="colophon">
+    မြန်မာစာ · ဂျင်းသမိုင်း · ၂၀၂၆<br>
+    <span class="colophon-small">ဂျင်းမပါသောအရာသည် မပြည့်စုံ။</span>
+  </footer>
+
+  <div id="hall" class="hall" role="dialog" aria-modal="true">
+    <div class="hall-bar">
+      <button id="closeHall" class="hall-out" type="button">◆ စာမူမှ ထွက်မည်</button>
+      <span class="hall-name">ဂျင်းအင်ပါယာ · အတွဲ ၁.၂</span>
     </div>
-    <div class="frame-wrap">
-      <iframe id="pdfFrame" title="PDF viewer" loading="eager"></iframe>
+    <div class="hall-frame">
+      <iframe id="bookFrame" title="ဂျင်းစာအုပ်" loading="eager"></iframe>
+    </div>
+    <div class="hall-chant" aria-hidden="true">
+      <div class="marquee-track">
+        <span>ဂျင်း၊ ဂျင်း၊ ဂျင်း</span><span>✦</span><span>ဟင်းတိုင်း ဂျင်းပါစေ</span><span>✦</span><span>ဂျင်းမရှိသောဟင်း မဖြစ်ပါစေနှင့်</span><span>✦</span><span>ဂျင်း၊ ဂျင်း၊ ဂျင်း</span><span>✦</span><span>ဘာလုပ်လုပ် ဂျင်းပါရမည်</span><span>✦</span>
+      </div>
     </div>
   </div>
 

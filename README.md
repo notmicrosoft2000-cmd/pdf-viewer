@@ -1,22 +1,25 @@
-# PDF ကြည့်စရာ (PDF viewer)
+# ဂျင်းအင်ပါယာ (Ginger Empire)
 
-A simple, portrait-first PDF viewer for phones, with random sounds and
-Burmese (မြန်မာစာ) UI text.
+A portrait-first mobile PDF viewer with summary, quiz, and random sounds,
+written in Burmese (မြန်မာစာ).
 
-## What it is
+## What's inside
 
-- Lists the PDFs in `pdfs/` as tappable cards.
-- Opens any PDF full-screen in the phone's built-in PDF viewer.
-- `Web Audio` generates random chimes/noise on taps — whole thing needs no
-  sound files. Turn it off with the **အသံ ပိတ်** (sound off) button.
-- Layout is mobile-first and portrait-oriented (ဒေါင်လိုက်).
+- **စာမူ** — open the GINGER.pdf in a full-screen reading hall with a
+  Burmese-chant marquee at the bottom.
+- **အနှစ်ချုပ်** — a tablet-style timeline of all five Ginger Eras, summarised
+  from the PDF's content.
+- **ပဟေဠိ** — 12-question multiple-choice quiz written from the PDF, with
+  instant feedback and a final score graded in Burmese.
+- **Random sounds** — `Web Audio` chimes on every tap, deep gongs on
+  major events. Toggle off with the **ခေါင်းလောင်း** button at the bottom.
 
 ## Files
 
-- `index.html` — the app (all UI copy in Burmese)
-- `css/style.css` — portrait-first styling
-- `js/app.js` — PDF list, full-screen viewer, random sounds (Web Audio API)
-- `pdfs/` — the PDFs being served
+- `index.html` — the app (all copy in Burmese)
+- `css/style.css` — ginger-seal / parchment aesthetic, portrait-first
+- `js/app.js` — summary data, quiz, viewer, random sounds
+- `pdfs/` — the PDF being served
 
 ## Run locally
 
@@ -24,8 +27,9 @@ Burmese (မြန်မာစာ) UI text.
 python3 -m http.server 8000
 ```
 
-then open http://localhost:8000 from your phone.
+Open http://localhost:8000 on your phone in portrait orientation.
 
-## Add a PDF
+## Add a new PDF
 
-Drop a file into `pdfs/` and add one entry to the `DOCS` array in `js/app.js`.
+Drop the file into `pdfs/`, add entries to the `DOCS` array in `js/app.js`,
+and update the `<button id="openBook">` in `index.html`.
