@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="PDF ကြည့်စရာ — ဖုန်းပေါ်မှာ ဒေါင်လိုက် (portrait) အနေအထားနဲ့ PDF ဖတ်နိုင်တဲ့ ရိုးရှင်းတဲ့ တေးရှားတစ်ခုပါ။">
+  <meta name="theme-color" content="#0f172a">
+  <title>PDF ကြည့်စရာ</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">📘</span>
+        <div class="brand-text">
+          <h1>PDF ကြည့်စရာ</h1>
+          <p>မင်္ဂလာပါ · ဖုန်းကို ဒေါင်လိုက် ကိုင်ပြီး ဖတ်ပါ</p>
+        </div>
+      </div>
+      <button id="soundToggle" class="sound-btn" type="button" aria-pressed="true">
+        <span class="sound-icon">🔊</span>
+        <span class="sound-label">အသံ ဖွင့်</span>
+      </button>
+    </header>
+
+    <main class="content">
+      <p class="hint">
+        အောက်က စာရွက်တစ်ခုခုကို နှိပ်လိုက်ရင် PDF ပွင့်ပါမယ်။
+        ဖတ်ပြီးတာနဲ့ <b>နောက်သို့</b> ဆိုတဲ့ တည်နေရာကို နှိပ်ပြီး ပြန်ထွက်နိုင်ပါတယ်။
+      </p>
+
+      <h2 class="sec-title">စာရွက်များ</h2>
+      <ul class="doclist" id="docList"></ul>
+
+      <p class="note">
+        🔊 အသံက ကျပန်း အသံလေးတွေ ဖြစ်ပါတယ်။
+        မကြိုက်ရင် အပေါ်က <b>အသံ ပိတ်</b> ကို နှိပ်ပါ။
+      </p>
+    </main>
+
+    <footer class="foot">
+      မြန်မာစာ · PDF ကြည့်စရာ · ၂၀၂၆
+    </footer>
+  </div>
+
+  <div id="viewer" class="viewer hidden" role="dialog" aria-modal="true">
+    <div class="viewer-bar">
+      <button id="closeViewer" class="close-btn" type="button">← နောက်သို့</button>
+      <h2 id="viewerTitle" class="viewer-title"></h2>
+    </div>
+    <div class="frame-wrap">
+      <iframe id="pdfFrame" title="PDF viewer" loading="eager"></iframe>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
